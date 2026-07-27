@@ -39,29 +39,6 @@ This is a container-level fix (not scoped to the conda env) — if this pod is
 rebuilt from its base image, reinstall these before using `--video` or any
 camera-based task.
 
-## GitHub access
-
-- Auth: `gh` CLI (installed via apt, not preinstalled), logged in as
-  `kkwang18` via device-flow login:
-  `gh auth login --hostname github.com --git-protocol https --web`.
-  `gh auth setup-git` wires it up as the git credential helper — `git push`
-  works with no further config.
-- An SSH keypair was also generated (`~/.ssh/id_ed25519`) as an alternative
-  but is unused — `gh`'s HTTPS auth is what's actually active.
-- git identity (set globally): `user.name = Kenny Wang`,
-  `user.email = kennywang98@gmail.com`.
-
-## File transfer to local laptop
-
-- `runpodctl send <file>` on the pod → `runpodctl receive <code>` locally.
-  Relays through RunPod's servers, no SSH setup needed. Requires
-  `runpodctl` installed locally too (`brew install runpod/runpodctl/runpodctl`
-  on Mac, or grab the binary from RunPod's GitHub releases).
-- Direct `scp` also works if your laptop's SSH key is already authorized on
-  the pod: `scp -P $RUNPOD_TCP_PORT_22 root@$RUNPOD_PUBLIC_IP:<path> .` (both
-  env vars are set inside the pod; look them up fresh each time since they
-  change if the pod is recreated).
-
 ## Filesystem notes
 
 `/workspace` is a MooseFS network filesystem (FUSE-mounted), not local disk.
