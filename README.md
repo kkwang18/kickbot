@@ -4,7 +4,7 @@ Motion-imitation training pipeline for a Unitree G1 humanoid performing a karate
 
 ## Environment
 
-Runs against an existing Isaac Lab checkout at `/workspace/IsaacLab` (v2.3.0, conda env `env_isaaclab`). See `/workspace/isaaclab_commands.txt` on the training box for activation/run commands.
+Runs against an existing Isaac Lab checkout at `/workspace/IsaacLab` (v2.3.0, conda env `env_isaaclab`). See `SETUP.md` for environment fixes/gotchas and a fresh-pod quick start.
 
 ## Layout
 
@@ -15,4 +15,6 @@ Runs against an existing Isaac Lab checkout at `/workspace/IsaacLab` (v2.3.0, co
 
 ## Status
 
-Project scaffolding only — pipeline not yet implemented.
+See `PROGRESS.md` for what's done and what's next. Short version: Isaac Lab's
+AMP task is ported and validated on G1 with a placeholder reference motion;
+real motion data (retargeted AMASS or the karate-kick video) is next.
