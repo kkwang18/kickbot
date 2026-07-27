@@ -3,6 +3,35 @@
 Non-obvious fixes and gotchas for this RunPod GPU instance, kept here so they
 don't need to be rediscovered if the pod is rebuilt.
 
+## Quick start on a fresh pod
+
+Everything under `/workspace` (this repo, the IsaacLab checkout, the entire
+`env_isaaclab` conda env including Isaac Sim/torch/skrl, and our `.pth` task
+registration file) lives on the persistent network volume and survives pod
+deletion/recreation, as long as the **same volume** is attached to the new
+pod. Only container-root state (`/root`, `/usr`, `/etc`) is lost. On a fresh
+pod, attach the volume, then redo just these:
+
+```bash
+# 1. Rendering libs (missing from the base container image) - see "Rendering fix" below
+apt-get install -y libegl1 libglu1-mesa libxt6
+
+# 2. GitHub auth (gh CLI itself is also container-root, not just its login state)
+apt-get install -y gh   # or the full keyring-based install if this fails, see "GitHub access" below
+gh auth login --hostname github.com --git-protocol https --web
+gh auth setup-git
+
+# 3. git identity
+git config --global user.name "Kenny Wang"
+git config --global user.email "kennywang98@gmail.com"
+```
+
+Then `conda activate env_isaaclab` and everything (including
+`Isaac-G1-AMP-Kick-v0`) should work exactly as it did before. If the new pod
+lands on a different physical GPU slot, you may also hit the `/dev/nvidia0`
+device-numbering issue again (see "GPU" below) - the symlink workaround takes
+one command if so.
+
 ## Isaac Lab install
 
 - Isaac Lab v2.3.0 at `/workspace/IsaacLab` (git repo, origin `isaac-sim/IsaacLab`)
@@ -95,8 +124,11 @@ import sys; sys.path.insert(0, "/workspace/kickbot/tasks") if "/workspace/kickbo
 
 This means `Isaac-G1-AMP-Kick-v0` is registered automatically in every
 `isaaclab.sh -p ...` invocation in this env, with zero vendored-repo changes.
-If this pod is rebuilt, this `.pth` file needs to be recreated (it's outside
-both this git repo and the IsaacLab checkout — lives in the conda env itself).
+It's outside both this git repo and the IsaacLab checkout — lives in the
+conda env itself at `.../env_isaaclab/lib/python3.11/site-packages/` — but
+since that whole conda env is under `/workspace`, it's on the persistent
+volume and survives a pod rebuild along with everything else there. No action
+needed on a fresh pod as long as the same volume is attached.
 
 ## skrl AMP config version skew
 
