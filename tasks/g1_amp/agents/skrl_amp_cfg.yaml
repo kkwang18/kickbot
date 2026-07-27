@@ -1,0 +1,116 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# Adapted from isaaclab_tasks/direct/humanoid_amp/agents/skrl_walk_amp_cfg.yaml.
+# Network layers are sized symbolically (OBSERVATIONS/ACTIONS), so no G1-specific
+# dimension changes are needed here - only the experiment directory name differs.
+#
+# The `agent:` field names below were also updated to match the AMP_CFG dataclass in
+# the installed skrl version (2.1.0), which has renamed/removed several fields since
+# IsaacLab's shipped example yaml was written (e.g. amp_state_preprocessor ->
+# amp_observation_preprocessor, style_reward_weight + discriminator_reward_scale ->
+# style_reward_scale). IsaacLab's own Isaac-Humanoid-AMP-Walk-Direct-v0 would hit the
+# same TypeError if run against this skrl version - this isn't a G1-specific issue.
+
+seed: 42
+
+
+# Models are instantiated using skrl's model instantiator utility
+# https://skrl.readthedocs.io/en/latest/api/utils/model_instantiators.html
+models:
+  separate: True
+  policy:  # see gaussian_model parameters
+    class: GaussianMixin
+    clip_actions: False
+    clip_log_std: True
+    min_log_std: -20.0
+    max_log_std: 2.0
+    initial_log_std: -2.9
+    fixed_log_std: True
+    network:
+      - name: net
+        input: OBSERVATIONS
+        layers: [1024, 512]
+        activations: relu
+    output: ACTIONS
+  value:  # see deterministic_model parameters
+    class: DeterministicMixin
+    clip_actions: False
+    network:
+      - name: net
+        input: OBSERVATIONS
+        layers: [1024, 512]
+        activations: relu
+    output: ONE
+  discriminator:  # see deterministic_model parameters
+    class: DeterministicMixin
+    clip_actions: False
+    network:
+      - name: net
+        input: OBSERVATIONS
+        layers: [1024, 512]
+        activations: relu
+    output: ONE
+
+
+# Rollout memory
+# https://skrl.readthedocs.io/en/latest/api/memories/random.html
+memory:
+  class: RandomMemory
+  memory_size: -1  # automatically determined (same as agent:rollouts)
+
+# AMP memory (reference motion dataset)
+# https://skrl.readthedocs.io/en/latest/api/memories/random.html
+motion_dataset:
+  class: RandomMemory
+  memory_size: 200000
+
+# AMP memory (preventing discriminator overfitting)
+# https://skrl.readthedocs.io/en/latest/api/memories/random.html
+reply_buffer:
+  class: RandomMemory
+  memory_size: 1000000
+
+
+# AMP agent configuration (field names are from AMP_DEFAULT_CONFIG)
+# https://skrl.readthedocs.io/en/latest/api/agents/amp.html
+agent:
+  class: AMP
+  rollouts: 16
+  learning_epochs: 6
+  mini_batches: 2
+  discount_factor: 0.99
+  gae_lambda: 0.95
+  learning_rate: 5.0e-05
+  learning_rate_scheduler: null
+  observation_preprocessor: RunningStandardScaler
+  value_preprocessor: RunningStandardScaler
+  amp_observation_preprocessor: RunningStandardScaler
+  random_timesteps: 0
+  learning_starts: 0
+  grad_norm_clip: 0.0
+  ratio_clip: 0.2
+  value_clip: 0.2
+  entropy_loss_scale: 0.0
+  value_loss_scale: 2.5
+  discriminator_loss_scale: 5.0
+  amp_batch_size: 512
+  task_reward_scale: 0.0
+  style_reward_scale: 2.0
+  discriminator_batch_size: 4096
+  discriminator_logit_regularization_scale: 0.05
+  discriminator_gradient_penalty_scale: 5.0
+  discriminator_weight_decay_scale: 1.0e-04
+  time_limit_bootstrap: False
+  # logging and checkpoint
+  experiment:
+    directory: "g1_amp_kick"
+    experiment_name: ""
+    write_interval: auto
+    checkpoint_interval: auto
+
+
+# Sequential trainer
+# https://skrl.readthedocs.io/en/latest/api/trainers/sequential.html
+trainer:
+  class: SequentialTrainer
+  timesteps: 80000
+  environment_info: log

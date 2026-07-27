@@ -49,6 +49,18 @@ Sim's first boot (extension loading touches thousands of small files) is
 similarly slow. If a command seems stuck, check CPU time before assuming a
 hang.
 
+## Standalone script teardown hangs
+
+Short standalone scripts (e.g. spawn-a-robot-and-print-something one-offs, not
+full training runs) have reliably hung for many minutes at
+`simulation_app.close()` after printing all their real output - the actual
+work finishes, only Isaac Sim's shutdown is stuck. Symptom: `kill -0 <pid>`
+still reports alive with the python process burning CPU, long after the
+script's own print statements are done. Don't wait for the process to exit as
+your completion signal for these - watch the log content for your script's
+own final print statement instead, then kill the process manually. Full
+training runs via `train.py` have not shown this (they exit cleanly).
+
 ## G1 asset
 
 - Isaac Lab ships G1 configs in `isaaclab_assets.robots.unitree`: `G1_CFG`,
@@ -67,3 +79,37 @@ that calls `gym.register(...)` works with `--task` exactly like an in-tree
 task. This project's task code lives in `tasks/` in this repo rather than
 inside the vendored `/workspace/IsaacLab` source tree, which tracks the
 `isaac-sim/IsaacLab` upstream and shouldn't carry project-specific code.
+
+Being importable isn't enough on its own, though — something still has to
+actually run `import g1_amp` so its `gym.register(...)` call executes before
+`gym.make(--task ...)` looks it up. In-tree tasks get this for free because
+`isaaclab_tasks/__init__.py` auto-imports every task subpackage; our external
+package doesn't hook into that. Fix: a `.pth` file in the conda env's
+site-packages dir, which Python's `site` module auto-executes at interpreter
+startup for any line starting with `import`:
+
+```
+# /workspace/miniconda3/envs/env_isaaclab/lib/python3.11/site-packages/kickbot_tasks.pth
+import sys; sys.path.insert(0, "/workspace/kickbot/tasks") if "/workspace/kickbot/tasks" not in sys.path else None; import g1_amp
+```
+
+This means `Isaac-G1-AMP-Kick-v0` is registered automatically in every
+`isaaclab.sh -p ...` invocation in this env, with zero vendored-repo changes.
+If this pod is rebuilt, this `.pth` file needs to be recreated (it's outside
+both this git repo and the IsaacLab checkout — lives in the conda env itself).
+
+## skrl AMP config version skew
+
+The installed `skrl` (2.1.0) uses a newer dataclass-based `AMP_CFG` than the
+one IsaacLab's own shipped example
+(`isaaclab_tasks/direct/humanoid_amp/agents/skrl_walk_amp_cfg.yaml`) targets.
+Several `agent:` fields were renamed/removed (e.g. `amp_state_preprocessor` ->
+`amp_observation_preprocessor`, `lambda` -> `gae_lambda`,
+`style_reward_weight` + `discriminator_reward_scale` merged into a single
+`style_reward_scale`), and `clip_predicted_values` was removed entirely.
+`tasks/g1_amp/agents/skrl_amp_cfg.yaml` has the corrected field names for this
+skrl version. IsaacLab's own bundled `Isaac-Humanoid-AMP-Walk-Direct-v0` task
+would hit the same `TypeError: AMP_CFG.__init__() got an unexpected keyword
+argument` if run against this environment - it's a version-skew bug in the
+shipped repo/env combo, not specific to our G1 port. Worth re-checking if
+Isaac Lab or skrl gets upgraded on this box.
