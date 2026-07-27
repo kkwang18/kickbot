@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Isaac Lab / training outputs
+logs/
+outputs/
+runs/
+wandb/
+*.mp4
+*.tfevents.*
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp
