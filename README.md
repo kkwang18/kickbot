@@ -16,5 +16,7 @@ Runs against an existing Isaac Lab checkout at `/workspace/IsaacLab` (v2.3.0, co
 ## Status
 
 See `PROGRESS.md` for what's done and what's next. Short version: Isaac Lab's
-AMP task is ported and validated on G1 with a placeholder reference motion;
-real motion data (retargeted AMASS or the karate-kick video) is next.
+AMP task is ported to G1, and the retargeting pipeline is validated
+end-to-end on a real walk cycle (AMP training shows real learning: episode
+survival went from ~10 to ~296/300 steps). The karate-kick video → 3D pose →
+retargeting pipeline is next.

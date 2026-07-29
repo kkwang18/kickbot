@@ -20,3 +20,13 @@ gym.register(
         "skrl_amp_cfg_entry_point": f"{agents.__name__}:skrl_amp_cfg.yaml",
     },
 )
+
+gym.register(
+    id="Isaac-G1-AMP-Walk-v0",
+    entry_point=f"{__name__}.g1_amp_env:G1AmpEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.g1_amp_env_cfg:G1AmpWalkEnvCfg",
+        "skrl_amp_cfg_entry_point": f"{agents.__name__}:skrl_amp_cfg.yaml",
+    },
+)

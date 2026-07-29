@@ -102,7 +102,7 @@ agent:
   time_limit_bootstrap: False
   # logging and checkpoint
   experiment:
-    directory: "g1_amp_kick"
+    directory: "g1_amp"
     experiment_name: ""
     write_interval: auto
     checkpoint_interval: auto

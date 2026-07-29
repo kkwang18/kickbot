@@ -90,3 +90,17 @@ class G1AmpKickEnvCfg(G1AmpEnvCfg):
     """
 
     motion_file = os.path.join(MOTIONS_DIR, "g1_placeholder.npz")
+
+
+@configclass
+class G1AmpWalkEnvCfg(G1AmpEnvCfg):
+    """Validation task: a real retargeted walk cycle (not a placeholder).
+
+    Motion is `motions/g1_walk.npz`, produced by `retargeting/retarget_walk.py` from
+    Isaac Lab's own bundled `humanoid_walk.npz` reference clip via per-frame keypoint IK
+    against G1's actual kinematic tree (see `retargeting/kinematics.py`). Exists to prove
+    the retargeting pipeline produces AMP-trainable motion on an easy, well-understood case
+    before attempting it on real kick footage.
+    """
+
+    motion_file = os.path.join(MOTIONS_DIR, "g1_walk.npz")

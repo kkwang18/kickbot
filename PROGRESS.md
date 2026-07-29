@@ -46,46 +46,131 @@ with zero NaN/crashes, checkpoints save. Also found and fixed a real skrl
 renamed/removed since Isaac Lab's shipped example yaml was written) — this
 would have broken Isaac Lab's own bundled AMP example too, not just ours.
 
-Net result: the AMP-on-G1 machinery is proven to work mechanically. Nothing
-about it can currently produce a karate kick, or any specific behavior —
-the reference motion is a static pose, not a real motion.
+Net result (at the time): the AMP-on-G1 machinery was proven to work
+mechanically. Nothing about it could yet produce any specific behavior —
+the reference motion was a static pose, not a real motion.
+
+**Retargeted a real walk cycle onto G1 and confirmed AMP training actually
+learns from it.** This is the retargeting-pipeline validation the previous
+section's "what's next" called for, now done:
+
+- Skipped gated AMASS entirely — used Isaac Lab's own bundled
+  `isaaclab_tasks/direct/humanoid_amp/motions/humanoid_walk.npz` (154 frames
+  @ 60 fps, 15 body keypoints), the exact clip Isaac Lab uses to validate its
+  own AMP example. License-clean, already known-good, zero network/credential
+  dependency.
+- `scripts/dump_g1_info.py` extracts G1's *exact* kinematic model (every
+  joint's axis, pivot, parent/child body — all 37 DOF plus the 6 fixed
+  joints needed to place all 44 bodies, including `{left,right}_palm_link`)
+  directly from the live simulated asset via raw USD introspection
+  (`root_physx_view.dof_paths` + `UsdPhysics.RevoluteJoint`/`Joint`). No
+  external URDF involved, so no risk of it disagreeing with what Isaac Sim
+  actually simulates. Output: `motions/g1_info.json`.
+- `retargeting/kinematics.py` — a pure-numpy forward-kinematics model of G1
+  built from that JSON. Validated against Isaac Sim's own ground truth to
+  sub-millimeter precision (max 0.6mm position error across all 44 bodies).
+  Getting to that precision took real debugging: the first ground-truth
+  capture let PD-held joints settle under gravity for only 2 physics steps,
+  which isn't enough time for a spring-damper system to reach the commanded
+  target — errors up to 40cm at the hands looked exactly like an FK bug but
+  were actually a test artifact (confirmed by disabling gravity, which barely
+  moved the error, then fixed properly by writing joint state directly
+  instead of commanding a PD target and waiting).
+- `retargeting/retarget_walk.py` — maps the walk cycle's 15 body keypoints to
+  G1 equivalents (`{left,right}_hip_yaw_link` for thighs, `..._knee_link` for
+  shins, `..._ankle_roll_link` for feet, `..._shoulder_yaw_link` /
+  `..._elbow_roll_link` / `..._palm_link` for arms — both skeletons place a
+  link's origin at its proximal joint, confirmed via the JSON, so this is a
+  like-for-like mapping), scales by G1/source leg-length ratio, then solves
+  per-frame IK (21 posture-relevant DOF: legs, torso, shoulders, elbow-pitch)
+  against the FK model. Needed one real fix: `scipy.optimize.least_squares`,
+  even warm-started frame-to-frame, occasionally jumped to a different but
+  equally-valid arm configuration (a multi-radian single-frame "flip",
+  caught by a >70 rad/s velocity sanity check) — fixed with a small temporal-
+  regularization term penalizing deviation from the previous frame's
+  solution. Output: `motions/g1_walk.npz`.
+- Registered a second task, `Isaac-G1-AMP-Walk-v0` (`G1AmpWalkEnvCfg`), so the
+  walk validation motion and the eventual kick motion coexist as separate
+  tasks rather than one overwriting the other. Renamed the shared skrl
+  experiment directory from `g1_amp_kick` to `g1_amp` since it's no longer
+  kick-specific.
+- **Ran real AMP training** (1000 iterations / 16,000 steps, 4096 parallel
+  envs, ~8m20s): episode survival length went from a mean of **~10 steps to
+  ~296 out of the 300-step (10s) episode horizon** — the policy went from
+  falling over almost immediately to staying upright for essentially the
+  full episode. Discriminator loss stayed stable throughout (1.7–2.2, no
+  collapse or blow-up). This is real, quantitative evidence of learning, not
+  just mechanical correctness.
+- Found and fixed two more real skrl 2.1.0 API version-skew bugs while
+  getting a video of the trained policy out of Isaac Lab's stock
+  `play.py` (same category as the AMP_CFG yaml issue below — the vendored
+  script targets a different skrl API version than what's installed):
+  `agent.set_running_mode("eval")` no longer exists (renamed to
+  `agent.enable_training_mode(False, apply_to_models=True)`), and
+  `agent.act(obs, timestep=.., timesteps=..)` is missing the now-required
+  `states` positional argument. Rather than patch the vendored IsaacLab
+  checkout, kept a fixed local copy: `scripts/play_walk_video.py`.
+- Rendered and visually reviewed a video of the trained policy
+  (`scripts/play_walk_video.py --video`) — confirms the survival-length
+  numbers reflect real locomotion, not a degenerate stay-upright trick.
+
+Found and fixed a real skrl 2.1.0 **config** version-skew bug along the way
+(distinct from the two above): several `AMP_CFG` fields were renamed/removed
+since Isaac Lab's shipped example yaml was written) — this would have broken
+Isaac Lab's own bundled AMP example too, not just ours.
+`tasks/g1_amp/agents/skrl_amp_cfg.yaml` has the corrected field names.
 
 ## What's next
 
-The placeholder motion is the only thing standing between "AMP works on G1"
-and "G1 imitates a real motion." Two reasonable next steps, not necessarily
-in order:
+The retargeting pipeline is proven end-to-end on an easy case. Remaining
+before a real kick:
 
-1. **Retarget one simple existing mocap clip (e.g. an AMASS walk cycle) onto
-   G1** and confirm AMP training actually converges to recognizable walking
-   behavior. This validates the retargeting pipeline on an easy, well-behaved
-   motion before spending effort on the harder case (see below). Lower risk,
-   faster to debug if something's wrong with the retargeting math.
-2. **Build the video → 3D pose → retargeted motion pipeline** for the actual
+1. **Build the video → 3D pose → retargeted motion pipeline** for the actual
    karate-kick footage. This is expected to be the hardest, most
    time-consuming part of the whole project — video-to-3D-pose tools
    (WHAM, 4D-Humans) are weakest exactly on fast, dynamic, single-limb
-   motions like a kick (occlusion, motion blur, foot-contact ambiguity), and
-   SMPL-to-G1 retargeting is a real DOF/proportion mismatch problem, not a
-   relabeling exercise (different joint layout, limb ratios, joint limits).
+   motions like a kick (occlusion, motion blur, foot-contact ambiguity).
+   Once 3D keypoints exist, retargeting itself should reuse the same
+   `kinematics.py` FK/IK machinery proven here — likely needs a bigger
+   `BODY_MAP` (more of SMPL's ~24 joints have no clean G1 equivalent than the
+   generic Humanoid-28's 15 did) and probably per-segment scale factors
+   instead of a single uniform leg-length scale, since a kick's reach depends
+   on accurate limb proportions in a way a walk cycle mostly doesn't.
+2. Optionally: iterate on walk quality/duration before moving to the kick
+   (longer training run, tune AMP style-reward weight, add a real tracking
+   reward) — not required to proceed, since the goal of this pass was
+   validating the pipeline, not producing a polished walk.
 
-After a real reference motion exists (from either path), remaining work per
-the original plan: assemble the full reward (AMP/tracking term + balance/
-stability + domain randomization for mass/friction/motor strength/latency,
-borrowing the randomization structure already present in Isaac Lab's G1
-velocity-task configs), then train on flat terrain and iterate before
-considering harder terrain or sim-to-real.
+After a real kick reference motion exists, remaining work per the original
+plan: assemble the full reward (AMP/tracking term + balance/stability +
+domain randomization for mass/friction/motor strength/latency, borrowing the
+randomization structure already present in Isaac Lab's G1 velocity-task
+configs), then train on flat terrain and iterate before considering harder
+terrain or sim-to-real.
 
 ## Where to look
 
 - `SETUP.md` — environment runbook (fixes, gotchas, fresh-pod quick start).
   Read this first in any new session.
 - `tasks/g1_amp/` — the ported AMP task (env, config, motion loader, agent
-  config).
-- `motions/g1_placeholder.npz` — the current (placeholder) reference motion.
-- `scripts/gen_placeholder_motion.py` — how the placeholder was generated;
-  a useful template for whatever generates the real motion file later, since
-  it documents the exact `.npz` schema Isaac Lab's motion loader expects.
-- Training logs/checkpoints from the smoke test:
-  `/workspace/IsaacLab/logs/skrl/g1_amp_kick/` (not in git — logs/ is
-  gitignored, lives only on this pod's persistent volume).
+  config). Two registered variants: `Isaac-G1-AMP-Kick-v0` (placeholder
+  motion, unchanged) and `Isaac-G1-AMP-Walk-v0` (real retargeted walk).
+- `motions/g1_info.json` — G1's exact kinematic model (joint axes/pivots,
+  body tree), extracted via `scripts/dump_g1_info.py`. Reusable for any
+  future retargeting work, not walk-specific.
+- `retargeting/kinematics.py` — pure-numpy G1 forward/inverse kinematics,
+  validated to sub-mm precision. Reusable as-is for the kick.
+- `retargeting/retarget_walk.py` — the walk-specific retargeting script
+  (body mapping + IK loop); a template for a future `retarget_kick.py`, not
+  itself reusable for the kick without a new `BODY_MAP`.
+- `motions/g1_walk.npz` — the retargeted walk reference motion.
+- `motions/g1_placeholder.npz` / `scripts/gen_placeholder_motion.py` — the
+  original static-pose placeholder, still used by `Isaac-G1-AMP-Kick-v0`
+  until real kick footage is retargeted.
+- `scripts/play_walk_video.py` — fixed local copy of Isaac Lab's `play.py`
+  for this skrl version (see version-skew notes above); use for rendering
+  any future checkpoint's rollout to video.
+- Training logs/checkpoints: `/workspace/IsaacLab/logs/skrl/g1_amp/` (not in
+  git — logs/ is gitignored, lives only on this pod's persistent volume).
+  The walk validation run is
+  `2026-07-29_19-40-12_amp_torch/checkpoints/best_agent.pt`.

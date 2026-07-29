@@ -1,0 +1,2172 @@
+{
+  "dof_names": [
+    "left_hip_pitch_joint",
+    "right_hip_pitch_joint",
+    "torso_joint",
+    "left_hip_roll_joint",
+    "right_hip_roll_joint",
+    "left_shoulder_pitch_joint",
+    "right_shoulder_pitch_joint",
+    "left_hip_yaw_joint",
+    "right_hip_yaw_joint",
+    "left_shoulder_roll_joint",
+    "right_shoulder_roll_joint",
+    "left_knee_joint",
+    "right_knee_joint",
+    "left_shoulder_yaw_joint",
+    "right_shoulder_yaw_joint",
+    "left_ankle_pitch_joint",
+    "right_ankle_pitch_joint",
+    "left_elbow_pitch_joint",
+    "right_elbow_pitch_joint",
+    "left_ankle_roll_joint",
+    "right_ankle_roll_joint",
+    "left_elbow_roll_joint",
+    "right_elbow_roll_joint",
+    "left_five_joint",
+    "left_three_joint",
+    "left_zero_joint",
+    "right_five_joint",
+    "right_three_joint",
+    "right_zero_joint",
+    "left_six_joint",
+    "left_four_joint",
+    "left_one_joint",
+    "right_six_joint",
+    "right_four_joint",
+    "right_one_joint",
+    "left_two_joint",
+    "right_two_joint"
+  ],
+  "body_names": [
+    "pelvis",
+    "left_hip_pitch_link",
+    "pelvis_contour_link",
+    "right_hip_pitch_link",
+    "torso_link",
+    "left_hip_roll_link",
+    "right_hip_roll_link",
+    "head_link",
+    "imu_link",
+    "left_shoulder_pitch_link",
+    "logo_link",
+    "right_shoulder_pitch_link",
+    "left_hip_yaw_link",
+    "right_hip_yaw_link",
+    "left_shoulder_roll_link",
+    "right_shoulder_roll_link",
+    "left_knee_link",
+    "right_knee_link",
+    "left_shoulder_yaw_link",
+    "right_shoulder_yaw_link",
+    "left_ankle_pitch_link",
+    "right_ankle_pitch_link",
+    "left_elbow_pitch_link",
+    "right_elbow_pitch_link",
+    "left_ankle_roll_link",
+    "right_ankle_roll_link",
+    "left_elbow_roll_link",
+    "right_elbow_roll_link",
+    "left_palm_link",
+    "right_palm_link",
+    "left_five_link",
+    "left_three_link",
+    "left_zero_link",
+    "right_five_link",
+    "right_three_link",
+    "right_zero_link",
+    "left_six_link",
+    "left_four_link",
+    "left_one_link",
+    "right_six_link",
+    "right_four_link",
+    "right_one_link",
+    "left_two_link",
+    "right_two_link"
+  ],
+  "default_joint_pos": [
+    -0.20000000298023224,
+    -0.20000000298023224,
+    0.0,
+    0.0,
+    0.0,
+    0.3499999940395355,
+    0.3499999940395355,
+    0.0,
+    0.0,
+    0.1599999964237213,
+    -0.1599999964237213,
+    0.41999998688697815,
+    0.41999998688697815,
+    0.0,
+    0.0,
+    -0.23000000417232513,
+    -0.23000000417232513,
+    0.8700000047683716,
+    0.8700000047683716,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.5199999809265137,
+    -0.5199999809265137
+  ],
+  "soft_joint_pos_lower": [
+    -2.0799996852874756,
+    -2.0799996852874756,
+    -2.3561999797821045,
+    -0.12049996852874756,
+    -2.3904995918273926,
+    -2.67911958694458,
+    -2.67911958694458,
+    -2.4749996662139893,
+    -2.4749996662139893,
+    -1.3962149620056152,
+    -2.0595147609710693,
+    -0.19090032577514648,
+    -0.19090032577514648,
+    -2.3561999797821045,
+    -2.3561999797821045,
+    -0.6094999313354492,
+    -0.6094999313354492,
+    -0.04441988468170166,
+    -0.04441988468170166,
+    -0.23561996221542358,
+    -0.23561996221542358,
+    -1.8848698139190674,
+    -1.8848698139190674,
+    -1.7329999208450317,
+    -1.7329999208450317,
+    -0.4712381362915039,
+    -0.1929999589920044,
+    -0.1929999589920044,
+    -0.4712381362915039,
+    -1.747999906539917,
+    -1.747999906539917,
+    -0.8899999856948853,
+    0.09200000762939453,
+    0.09200000762939453,
+    -1.090000033378601,
+    0.09200000762939453,
+    -1.747999906539917
+  ],
+  "soft_joint_pos_upper": [
+    2.7799999713897705,
+    2.7799999713897705,
+    2.3561999797821045,
+    2.3904995918273926,
+    0.12049996852874756,
+    2.5045199394226074,
+    2.5045199394226074,
+    2.4749996662139893,
+    2.4749996662139893,
+    2.0595147609710693,
+    1.3962149620056152,
+    2.4009101390838623,
+    2.4009101390838623,
+    2.3561999797821045,
+    2.3561999797821045,
+    0.6594998836517334,
+    0.6594998836517334,
+    3.238419532775879,
+    3.238419532775879,
+    0.23561996221542358,
+    0.23561996221542358,
+    1.8848698139190674,
+    1.8848698139190674,
+    0.1929999589920044,
+    0.1929999589920044,
+    0.4712381362915039,
+    1.7329999208450317,
+    1.7329999208450317,
+    0.4712381362915039,
+    -0.09200000762939453,
+    -0.09200000762939453,
+    1.090000033378601,
+    1.747999906539917,
+    1.747999906539917,
+    0.8899999856948853,
+    1.747999906539917,
+    -0.09200000762939453
+  ],
+  "body_pos_w_default": [
+    [
+      -0.01465202122926712,
+      0.010494108311831951,
+      0.7720621228218079
+    ],
+    [
+      -0.031266480684280396,
+      0.07598746567964554,
+      0.6713860034942627
+    ],
+    [
+      -0.01465202309191227,
+      0.010494109243154526,
+      0.7720621228218079
+    ],
+    [
+      -0.036399371922016144,
+      -0.05280965566635132,
+      0.670964241027832
+    ],
+    [
+      -0.01465202309191227,
+      0.010494108311831951,
+      0.7720621824264526
+    ],
+    [
+      -0.029183844104409218,
+      0.12824571132659912,
+      0.6715571284294128
+    ],
+    [
+      -0.03848198801279068,
+      -0.1050678938627243,
+      0.6707931160926819
+    ],
+    [
+      -0.014652006328105927,
+      0.010494109243154526,
+      0.7720621824264526
+    ],
+    [
+      -0.027745084837079048,
+      0.012153835967183113,
+      0.9293691515922546
+    ],
+    [
+      0.03543857857584953,
+      0.11170367896556854,
+      1.0275764465332031
+    ],
+    [
+      -0.014652028679847717,
+      0.010494107380509377,
+      0.7720621824264526
+    ],
+    [
+      0.027198871597647667,
+      -0.09605170786380768,
+      1.0268884897232056
+    ],
+    [
+      0.03281336650252342,
+      0.12482281774282455,
+      0.56231689453125
+    ],
+    [
+      0.0236037727445364,
+      -0.10609281063079834,
+      0.5615544319152832
+    ],
+    [
+      0.04009639099240303,
+      0.16149699687957764,
+      1.041821837425232
+    ],
+    [
+      0.027894895523786545,
+      -0.1461505889892578,
+      1.040803074836731
+    ],
+    [
+      0.021873313933610916,
+      0.12400244921445847,
+      0.36887192726135254
+    ],
+    [
+      0.012786686420440674,
+      -0.10348972678184509,
+      0.3681182861328125
+    ],
+    [
+      -0.01467687264084816,
+      0.18453755974769592,
+      0.9571415185928345
+    ],
+    [
+      -0.028489142656326294,
+      -0.16420017182826996,
+      0.9559692144393921
+    ],
+    [
+      -0.13927054405212402,
+      0.13512778282165527,
+      0.11595417559146881
+    ],
+    [
+      -0.14860454201698303,
+      -0.10054247081279755,
+      0.1151307076215744
+    ],
+    [
+      -0.05762133002281189,
+      0.20057909190654755,
+      0.8849455118179321
+    ],
+    [
+      -0.07253336906433105,
+      -0.1762954294681549,
+      0.8836668729782104
+    ],
+    [
+      -0.142378568649292,
+      0.13529446721076965,
+      0.0986742451786995
+    ],
+    [
+      -0.1517082154750824,
+      -0.10037950426340103,
+      0.09784997999668121
+    ],
+    [
+      -0.04033976048231125,
+      0.21726548671722412,
+      0.7878738045692444
+    ],
+    [
+      -0.056599900126457214,
+      -0.1936422884464264,
+      0.7864803671836853
+    ],
+    [
+      -0.01960187777876854,
+      0.237289160490036,
+      0.671387791633606
+    ],
+    [
+      -0.037479739636182785,
+      -0.21445849537849426,
+      0.6698566675186157
+    ],
+    [
+      -0.02837039902806282,
+      0.2568333148956299,
+      0.5856221318244934
+    ],
+    [
+      0.018786760047078133,
+      0.25398537516593933,
+      0.5935279130935669
+    ],
+    [
+      -0.010961080901324749,
+      0.2456323504447937,
+      0.6228519082069397
+    ],
+    [
+      -0.04774460196495056,
+      -0.23266318440437317,
+      0.5839623212814331
+    ],
+    [
+      -0.0005126697942614555,
+      -0.2336205393075943,
+      0.591876745223999
+    ],
+    [
+      -0.029513005167245865,
+      -0.22313192486763,
+      0.6212633848190308
+    ],
+    [
+      -0.020339393988251686,
+      0.2611493170261383,
+      0.5392729043960571
+    ],
+    [
+      0.026817770674824715,
+      0.25830158591270447,
+      0.5471788048744202
+    ],
+    [
+      -0.0161613579839468,
+      0.22270655632019043,
+      0.6453104019165039
+    ],
+    [
+      -0.04006683826446533,
+      -0.23728901147842407,
+      0.5375831723213196
+    ],
+    [
+      0.007165076211094856,
+      -0.2382468432188034,
+      0.5454976558685303
+    ],
+    [
+      -0.03288458660244942,
+      -0.2000184953212738,
+      0.6438779830932617
+    ],
+    [
+      -0.010596753098070621,
+      0.20583891868591309,
+      0.6060404181480408
+    ],
+    [
+      -0.02598625235259533,
+      -0.18338052928447723,
+      0.6047219038009644
+    ]
+  ],
+  "body_quat_w_default": [
+    [
+      0.9953824877738953,
+      0.0034991491120308638,
+      0.09388551115989685,
+      -0.0196726955473423
+    ],
+    [
+      0.9836680293083191,
+      -0.0019531259313225746,
+      -0.178880512714386,
+      -0.019885797053575516
+    ],
+    [
+      0.9953823685646057,
+      0.0034991486463695765,
+      0.09388549625873566,
+      -0.01967269368469715
+    ],
+    [
+      0.983674168586731,
+      -0.0019524249946698546,
+      -0.17884568870067596,
+      -0.019885815680027008
+    ],
+    [
+      0.9953843355178833,
+      0.0035083098337054253,
+      0.0938851609826088,
+      -0.019575582817196846
+    ],
+    [
+      0.9836670756340027,
+      -0.0023292386904358864,
+      -0.17887291312217712,
+      -0.019954204559326172
+    ],
+    [
+      0.9836730360984802,
+      -0.002440377604216337,
+      -0.17883579432964325,
+      -0.019974524155259132
+    ],
+    [
+      0.9953842759132385,
+      0.003508310066536069,
+      0.0938851609826088,
+      -0.019575582817196846
+    ],
+    [
+      0.9953843355178833,
+      0.0035083098337054253,
+      0.0938851609826088,
+      -0.019575582817196846
+    ],
+    [
+      0.9543219804763794,
+      0.14548826217651367,
+      0.26086634397506714,
+      -0.007160868961364031
+    ],
+    [
+      0.9953843951225281,
+      0.003508310066536069,
+      0.09388517588376999,
+      -0.019575584679841995
+    ],
+    [
+      0.9543618559837341,
+      -0.13188107311725616,
+      0.26629558205604553,
+      -0.029786165803670883
+    ],
+    [
+      0.9836694598197937,
+      -0.0023512388579547405,
+      -0.17887258529663086,
+      -0.019833190366625786
+    ],
+    [
+      0.9836756587028503,
+      -0.0024635884910821915,
+      -0.17883548140525818,
+      -0.01984686776995659
+    ],
+    [
+      0.9612795114517212,
+      0.08853824436664581,
+      0.2608310282230377,
+      0.008348977193236351
+    ],
+    [
+      0.9605197310447693,
+      -0.07484087347984314,
+      0.2640504240989685,
+      -0.04558403789997101
+    ],
+    [
+      0.9597370028495789,
+      0.006771932356059551,
+      0.28018924593925476,
+      -0.018788879737257957
+    ],
+    [
+      0.9597796201705933,
+      0.006673978641629219,
+      0.2800411283969879,
+      -0.01885281875729561
+    ],
+    [
+      0.9612796902656555,
+      0.08853204548358917,
+      0.26083311438560486,
+      0.008326111361384392
+    ],
+    [
+      0.9605187773704529,
+      -0.07484625279903412,
+      0.26404890418052673,
+      -0.04560365155339241
+    ],
+    [
+      0.9958369135856628,
+      0.0030033672228455544,
+      0.08893689513206482,
+      -0.019744887948036194
+    ],
+    [
+      0.995847761631012,
+      0.002895394340157509,
+      0.08880925923585892,
+      -0.01978856883943081
+    ],
+    [
+      0.7619134187698364,
+      0.07678364962339401,
+      0.6415454745292664,
+      0.04484995827078819
+    ],
+    [
+      0.7598024010658264,
+      -0.04865898936986923,
+      0.6442193388938904,
+      -0.0728968158364296
+    ],
+    [
+      0.9958369731903076,
+      0.0030018757097423077,
+      0.08893696963787079,
+      -0.0197447557002306
+    ],
+    [
+      0.9958478212356567,
+      0.002896699821576476,
+      0.08880923688411713,
+      -0.01978868804872036
+    ],
+    [
+      0.7619134783744812,
+      0.07678262144327164,
+      0.641545295715332,
+      0.044850774109363556
+    ],
+    [
+      0.7598024606704712,
+      -0.048656824976205826,
+      0.6442192196846008,
+      -0.07289861142635345
+    ],
+    [
+      0.7619137167930603,
+      0.07678262144327164,
+      0.6415454149246216,
+      0.044850777834653854
+    ],
+    [
+      0.759802520275116,
+      -0.048656824976205826,
+      0.6442193388938904,
+      -0.07289861142635345
+    ],
+    [
+      0.7619137763977051,
+      0.07678131759166718,
+      0.6415455341339111,
+      0.0448492206633091
+    ],
+    [
+      0.7619137167930603,
+      0.07678263634443283,
+      0.6415454149246216,
+      0.044850774109363556
+    ],
+    [
+      0.7619115710258484,
+      0.07678248733282089,
+      0.6415477395057678,
+      0.04485102742910385
+    ],
+    [
+      0.7598024010658264,
+      -0.048657916486263275,
+      0.6442192196846008,
+      -0.07289987802505493
+    ],
+    [
+      0.7598020434379578,
+      -0.04866117984056473,
+      0.644218921661377,
+      -0.07290372997522354
+    ],
+    [
+      0.7598016858100891,
+      -0.04865676164627075,
+      0.644220232963562,
+      -0.07289870083332062
+    ],
+    [
+      0.7619138360023499,
+      0.07678129523992538,
+      0.6415454149246216,
+      0.0448492057621479
+    ],
+    [
+      0.7619137167930603,
+      0.07678262889385223,
+      0.641545295715332,
+      0.044850755482912064
+    ],
+    [
+      0.6471408009529114,
+      0.37495335936546326,
+      0.5262025594711304,
+      0.4046352505683899
+    ],
+    [
+      0.7598023414611816,
+      -0.04865790903568268,
+      0.6442192196846008,
+      -0.07289987057447433
+    ],
+    [
+      0.7598019242286682,
+      -0.048661161214113235,
+      0.644218921661377,
+      -0.07290370762348175
+    ],
+    [
+      0.6318390369415283,
+      -0.3515563905239105,
+      0.5420290231704712,
+      -0.4282432794570923
+    ],
+    [
+      0.5213666558265686,
+      0.49762752652168274,
+      0.41212382912635803,
+      0.5574026107788086
+    ],
+    [
+      0.5005096197128296,
+      -0.4790858328342438,
+      0.433432936668396,
+      -0.5762835741043091
+    ]
+  ],
+  "joints": [
+    {
+      "dof_index": 0,
+      "dof_name": "left_hip_pitch_joint",
+      "prim_path": "/World/Robot/pelvis/left_hip_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/pelvis",
+      "body1": "/World/Robot/left_hip_pitch_link",
+      "body0_name": "pelvis",
+      "body1_name": "left_hip_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        0.06445000320672989,
+        -0.10270000249147415
+      ],
+      "local_rot0": [
+        0.9848073720932007,
+        0.0,
+        -0.17365022003650665,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -134.6450653076172,
+      "upper_limit": 174.7521209716797
+    },
+    {
+      "dof_index": 1,
+      "dof_name": "right_hip_pitch_joint",
+      "prim_path": "/World/Robot/pelvis/right_hip_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/pelvis",
+      "body1": "/World/Robot/right_hip_pitch_link",
+      "body0_name": "pelvis",
+      "body1_name": "right_hip_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        -0.06445000320672989,
+        -0.10270000249147415
+      ],
+      "local_rot0": [
+        0.9848073720932007,
+        0.0,
+        -0.17365022003650665,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -134.6450653076172,
+      "upper_limit": 174.7521209716797
+    },
+    {
+      "dof_index": 2,
+      "dof_name": "torso_joint",
+      "prim_path": "/World/Robot/pelvis/torso_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/pelvis",
+      "body1": "/World/Robot/torso_link",
+      "body0_name": "pelvis",
+      "body1_name": "torso_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -150.00035095214844,
+      "upper_limit": 150.00035095214844
+    },
+    {
+      "dof_index": 3,
+      "dof_name": "left_hip_roll_joint",
+      "prim_path": "/World/Robot/left_hip_pitch_link/left_hip_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_hip_pitch_link",
+      "body1": "/World/Robot/left_hip_roll_link",
+      "body0_name": "left_hip_pitch_link",
+      "body1_name": "left_hip_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        0.052299998700618744,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -14.89690113067627,
+      "upper_limit": 144.95831298828125
+    },
+    {
+      "dof_index": 4,
+      "dof_name": "right_hip_roll_joint",
+      "prim_path": "/World/Robot/right_hip_pitch_link/right_hip_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_hip_pitch_link",
+      "body1": "/World/Robot/right_hip_roll_link",
+      "body0_name": "right_hip_pitch_link",
+      "body1_name": "right_hip_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        -0.052299998700618744,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -144.95831298828125,
+      "upper_limit": 14.89690113067627
+    },
+    {
+      "dof_index": 5,
+      "dof_name": "left_shoulder_pitch_joint",
+      "prim_path": "/World/Robot/torso_link/left_shoulder_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/torso_link",
+      "body1": "/World/Robot/left_shoulder_pitch_link",
+      "body0_name": "torso_link",
+      "body1_name": "left_shoulder_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        -0.0024999999441206455,
+        0.10395999997854233,
+        0.2592799961566925
+      ],
+      "local_rot0": [
+        0.9902682304382324,
+        0.1391717791557312,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -170.00228881835938,
+      "upper_limit": 159.9984588623047
+    },
+    {
+      "dof_index": 6,
+      "dof_name": "right_shoulder_pitch_joint",
+      "prim_path": "/World/Robot/torso_link/right_shoulder_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/torso_link",
+      "body1": "/World/Robot/right_shoulder_pitch_link",
+      "body0_name": "torso_link",
+      "body1_name": "right_shoulder_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        -0.0024999999441206455,
+        -0.10395999997854233,
+        0.2592799961566925
+      ],
+      "local_rot0": [
+        0.9902682304382324,
+        -0.1391717791557312,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -170.00228881835938,
+      "upper_limit": 159.9984588623047
+    },
+    {
+      "dof_index": 7,
+      "dof_name": "left_hip_yaw_joint",
+      "prim_path": "/World/Robot/left_hip_roll_link/left_hip_yaw_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_hip_roll_link",
+      "body1": "/World/Robot/left_hip_yaw_link",
+      "body0_name": "left_hip_roll_link",
+      "body1_name": "left_hip_yaw_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.019659999758005142,
+        -0.0012139000464230776,
+        -0.12409999966621399
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -157.56338500976562,
+      "upper_limit": 157.56338500976562
+    },
+    {
+      "dof_index": 8,
+      "dof_name": "right_hip_yaw_joint",
+      "prim_path": "/World/Robot/right_hip_roll_link/right_hip_yaw_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_hip_roll_link",
+      "body1": "/World/Robot/right_hip_yaw_link",
+      "body0_name": "right_hip_roll_link",
+      "body1_name": "right_hip_yaw_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.019659999758005142,
+        0.0012139000464230776,
+        -0.12409999966621399
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -157.56338500976562,
+      "upper_limit": 157.56338500976562
+    },
+    {
+      "dof_index": 9,
+      "dof_name": "left_shoulder_roll_joint",
+      "prim_path": "/World/Robot/left_shoulder_pitch_link/left_shoulder_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_shoulder_pitch_link",
+      "body1": "/World/Robot/left_shoulder_roll_link",
+      "body0_name": "left_shoulder_pitch_link",
+      "body1_name": "left_shoulder_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        0.052000001072883606,
+        0.0
+      ],
+      "local_rot0": [
+        0.9902682304382324,
+        -0.1391717791557312,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -90.99715423583984,
+      "upper_limit": 129.00143432617188
+    },
+    {
+      "dof_index": 10,
+      "dof_name": "right_shoulder_roll_joint",
+      "prim_path": "/World/Robot/right_shoulder_pitch_link/right_shoulder_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_shoulder_pitch_link",
+      "body1": "/World/Robot/right_shoulder_roll_link",
+      "body0_name": "right_shoulder_pitch_link",
+      "body1_name": "right_shoulder_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        -0.052000001072883606,
+        0.0
+      ],
+      "local_rot0": [
+        0.9902682304382324,
+        0.1391717791557312,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -129.00143432617188,
+      "upper_limit": 90.99715423583984
+    },
+    {
+      "dof_index": 11,
+      "dof_name": "left_knee_joint",
+      "prim_path": "/World/Robot/left_hip_yaw_link/left_knee_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_hip_yaw_link",
+      "body1": "/World/Robot/left_knee_link",
+      "body0_name": "left_hip_yaw_link",
+      "body1_name": "left_knee_link",
+      "axis": "Y",
+      "local_pos0": [
+        -0.07829199731349945,
+        -0.0017335000447928905,
+        -0.1772249937057495
+      ],
+      "local_rot0": [
+        0.9677137136459351,
+        0.0,
+        0.25205186009407043,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -19.187782287597656,
+      "upper_limit": 145.81201171875
+    },
+    {
+      "dof_index": 12,
+      "dof_name": "right_knee_joint",
+      "prim_path": "/World/Robot/right_hip_yaw_link/right_knee_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_hip_yaw_link",
+      "body1": "/World/Robot/right_knee_link",
+      "body0_name": "right_hip_yaw_link",
+      "body1_name": "right_knee_link",
+      "axis": "Y",
+      "local_pos0": [
+        -0.07829199731349945,
+        0.0017335000447928905,
+        -0.1772249937057495
+      ],
+      "local_rot0": [
+        0.9677137136459351,
+        0.0,
+        0.25205186009407043,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -19.187782287597656,
+      "upper_limit": 145.81201171875
+    },
+    {
+      "dof_index": 13,
+      "dof_name": "left_shoulder_yaw_joint",
+      "prim_path": "/World/Robot/left_shoulder_roll_link/left_shoulder_yaw_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_shoulder_roll_link",
+      "body1": "/World/Robot/left_shoulder_yaw_link",
+      "body0_name": "left_shoulder_roll_link",
+      "body1_name": "left_shoulder_yaw_link",
+      "axis": "Z",
+      "local_pos0": [
+        -0.003539999946951866,
+        0.006242400035262108,
+        -0.10320000350475311
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -150.00035095214844,
+      "upper_limit": 150.00035095214844
+    },
+    {
+      "dof_index": 14,
+      "dof_name": "right_shoulder_yaw_joint",
+      "prim_path": "/World/Robot/right_shoulder_roll_link/right_shoulder_yaw_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_shoulder_roll_link",
+      "body1": "/World/Robot/right_shoulder_yaw_link",
+      "body0_name": "right_shoulder_roll_link",
+      "body1_name": "right_shoulder_yaw_link",
+      "axis": "Z",
+      "local_pos0": [
+        -0.003539999946951866,
+        -0.006242400035262108,
+        -0.10320000350475311
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -150.00035095214844,
+      "upper_limit": 150.00035095214844
+    },
+    {
+      "dof_index": 15,
+      "dof_name": "left_ankle_pitch_joint",
+      "prim_path": "/World/Robot/left_knee_link/left_ankle_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_knee_link",
+      "body1": "/World/Robot/left_ankle_pitch_link",
+      "body0_name": "left_knee_link",
+      "body1_name": "left_ankle_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        0.004068700131028891,
+        -0.30006998777389526
+      ],
+      "local_rot0": [
+        0.996780514717102,
+        0.0,
+        -0.08017884194850922,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -38.96112823486328,
+      "upper_limit": 41.8259162902832
+    },
+    {
+      "dof_index": 16,
+      "dof_name": "right_ankle_pitch_joint",
+      "prim_path": "/World/Robot/right_knee_link/right_ankle_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_knee_link",
+      "body1": "/World/Robot/right_ankle_pitch_link",
+      "body0_name": "right_knee_link",
+      "body1_name": "right_ankle_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        -0.004068700131028891,
+        -0.30006998777389526
+      ],
+      "local_rot0": [
+        0.996780514717102,
+        0.0,
+        -0.08017884194850922,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -38.96112823486328,
+      "upper_limit": 41.8259162902832
+    },
+    {
+      "dof_index": 17,
+      "dof_name": "left_elbow_pitch_joint",
+      "prim_path": "/World/Robot/left_shoulder_yaw_link/left_elbow_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_shoulder_yaw_link",
+      "body1": "/World/Robot/left_elbow_pitch_link",
+      "body0_name": "left_shoulder_yaw_link",
+      "body1_name": "left_elbow_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        0.0018899999558925629,
+        -0.08550000190734863
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -12.994681358337402,
+      "upper_limit": 195.9973907470703
+    },
+    {
+      "dof_index": 18,
+      "dof_name": "right_elbow_pitch_joint",
+      "prim_path": "/World/Robot/right_shoulder_yaw_link/right_elbow_pitch_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_shoulder_yaw_link",
+      "body1": "/World/Robot/right_elbow_pitch_link",
+      "body0_name": "right_shoulder_yaw_link",
+      "body1_name": "right_elbow_pitch_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.0,
+        -0.0018899999558925629,
+        -0.08550000190734863
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -12.994681358337402,
+      "upper_limit": 195.9973907470703
+    },
+    {
+      "dof_index": 19,
+      "dof_name": "left_ankle_roll_joint",
+      "prim_path": "/World/Robot/left_ankle_pitch_link/left_ankle_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_ankle_pitch_link",
+      "body1": "/World/Robot/left_ankle_roll_link",
+      "body0_name": "left_ankle_pitch_link",
+      "body1_name": "left_ankle_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        0.0,
+        -0.01755799911916256
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -15.000033378601074,
+      "upper_limit": 15.000033378601074
+    },
+    {
+      "dof_index": 20,
+      "dof_name": "right_ankle_roll_joint",
+      "prim_path": "/World/Robot/right_ankle_pitch_link/right_ankle_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_ankle_pitch_link",
+      "body1": "/World/Robot/right_ankle_roll_link",
+      "body0_name": "right_ankle_pitch_link",
+      "body1_name": "right_ankle_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.0,
+        0.0,
+        -0.01755799911916256
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -15.000033378601074,
+      "upper_limit": 15.000033378601074
+    },
+    {
+      "dof_index": 21,
+      "dof_name": "left_elbow_roll_joint",
+      "prim_path": "/World/Robot/left_elbow_pitch_link/left_elbow_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_elbow_pitch_link",
+      "body1": "/World/Robot/left_elbow_roll_link",
+      "body0_name": "left_elbow_pitch_link",
+      "body1_name": "left_elbow_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.10000000149011612,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -119.99454498291016,
+      "upper_limit": 119.99454498291016
+    },
+    {
+      "dof_index": 22,
+      "dof_name": "right_elbow_roll_joint",
+      "prim_path": "/World/Robot/right_elbow_pitch_link/right_elbow_roll_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_elbow_pitch_link",
+      "body1": "/World/Robot/right_elbow_roll_link",
+      "body0_name": "right_elbow_pitch_link",
+      "body1_name": "right_elbow_roll_link",
+      "axis": "X",
+      "local_pos0": [
+        0.10000000149011612,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -119.99454498291016,
+      "upper_limit": 119.99454498291016
+    },
+    {
+      "dof_index": 23,
+      "dof_name": "left_five_joint",
+      "prim_path": "/World/Robot/left_palm_link/left_five_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_palm_link",
+      "body1": "/World/Robot/left_five_link",
+      "body0_name": "left_palm_link",
+      "body1_name": "left_five_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.08500000089406967,
+        0.004000000189989805,
+        -0.0239499993622303
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -105.42423248291016,
+      "upper_limit": 17.18873405456543
+    },
+    {
+      "dof_index": 24,
+      "dof_name": "left_three_joint",
+      "prim_path": "/World/Robot/left_palm_link/left_three_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_palm_link",
+      "body1": "/World/Robot/left_three_link",
+      "body0_name": "left_palm_link",
+      "body1_name": "left_three_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.08500000089406967,
+        0.004000000189989805,
+        0.0239499993622303
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -105.42423248291016,
+      "upper_limit": 17.18873405456543
+    },
+    {
+      "dof_index": 25,
+      "dof_name": "left_zero_joint",
+      "prim_path": "/World/Robot/left_palm_link/left_zero_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_palm_link",
+      "body1": "/World/Robot/left_zero_link",
+      "body0_name": "left_palm_link",
+      "body1_name": "left_zero_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.05000000074505806,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -29.999954223632812,
+      "upper_limit": 29.999954223632812
+    },
+    {
+      "dof_index": 26,
+      "dof_name": "right_five_joint",
+      "prim_path": "/World/Robot/right_palm_link/right_five_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_palm_link",
+      "body1": "/World/Robot/right_five_link",
+      "body0_name": "right_palm_link",
+      "body1_name": "right_five_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.08500000089406967,
+        -0.004000000189989805,
+        -0.0239499993622303
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -17.18873405456543,
+      "upper_limit": 105.42423248291016
+    },
+    {
+      "dof_index": 27,
+      "dof_name": "right_three_joint",
+      "prim_path": "/World/Robot/right_palm_link/right_three_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_palm_link",
+      "body1": "/World/Robot/right_three_link",
+      "body0_name": "right_palm_link",
+      "body1_name": "right_three_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.08500000089406967,
+        -0.004000000189989805,
+        0.0239499993622303
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -17.18873405456543,
+      "upper_limit": 105.42423248291016
+    },
+    {
+      "dof_index": 28,
+      "dof_name": "right_zero_joint",
+      "prim_path": "/World/Robot/right_palm_link/right_zero_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_palm_link",
+      "body1": "/World/Robot/right_zero_link",
+      "body0_name": "right_palm_link",
+      "body1_name": "right_zero_link",
+      "axis": "Y",
+      "local_pos0": [
+        0.05000000074505806,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -29.999954223632812,
+      "upper_limit": 29.999954223632812
+    },
+    {
+      "dof_index": 29,
+      "dof_name": "left_six_joint",
+      "prim_path": "/World/Robot/left_five_link/left_six_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_five_link",
+      "body1": "/World/Robot/left_six_link",
+      "body0_name": "left_five_link",
+      "body1_name": "left_six_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0471000000834465,
+        -0.003599999938160181,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -105.42423248291016,
+      "upper_limit": 0.0
+    },
+    {
+      "dof_index": 30,
+      "dof_name": "left_four_joint",
+      "prim_path": "/World/Robot/left_three_link/left_four_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_three_link",
+      "body1": "/World/Robot/left_four_link",
+      "body0_name": "left_three_link",
+      "body1_name": "left_four_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0471000000834465,
+        -0.003599999938160181,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -105.42423248291016,
+      "upper_limit": 0.0
+    },
+    {
+      "dof_index": 31,
+      "dof_name": "left_one_joint",
+      "prim_path": "/World/Robot/left_zero_link/left_one_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_zero_link",
+      "body1": "/World/Robot/left_one_link",
+      "body0_name": "left_zero_link",
+      "body1_name": "left_one_link",
+      "axis": "Z",
+      "local_pos0": [
+        -0.02652502991259098,
+        -0.018799999728798866,
+        -4.999999873689376e-05
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -57.2957763671875,
+      "upper_limit": 68.75493621826172
+    },
+    {
+      "dof_index": 32,
+      "dof_name": "right_six_joint",
+      "prim_path": "/World/Robot/right_five_link/right_six_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_five_link",
+      "body1": "/World/Robot/right_six_link",
+      "body0_name": "right_five_link",
+      "body1_name": "right_six_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0471000000834465,
+        0.003599999938160181,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": 0.0,
+      "upper_limit": 105.42423248291016
+    },
+    {
+      "dof_index": 33,
+      "dof_name": "right_four_joint",
+      "prim_path": "/World/Robot/right_three_link/right_four_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_three_link",
+      "body1": "/World/Robot/right_four_link",
+      "body0_name": "right_three_link",
+      "body1_name": "right_four_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0471000000834465,
+        0.003599999938160181,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": 0.0,
+      "upper_limit": 105.42423248291016
+    },
+    {
+      "dof_index": 34,
+      "dof_name": "right_one_joint",
+      "prim_path": "/World/Robot/right_zero_link/right_one_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_zero_link",
+      "body1": "/World/Robot/right_one_link",
+      "body0_name": "right_zero_link",
+      "body1_name": "right_one_link",
+      "axis": "Z",
+      "local_pos0": [
+        -0.02652502991259098,
+        0.018799999728798866,
+        -4.999999873689376e-05
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -68.75493621826172,
+      "upper_limit": 57.2957763671875
+    },
+    {
+      "dof_index": 35,
+      "dof_name": "left_two_joint",
+      "prim_path": "/World/Robot/left_one_link/left_two_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/left_one_link",
+      "body1": "/World/Robot/left_two_link",
+      "body0_name": "left_one_link",
+      "body1_name": "left_two_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0,
+        -0.04309999942779541,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": 0.0,
+      "upper_limit": 105.42423248291016
+    },
+    {
+      "dof_index": 36,
+      "dof_name": "right_two_joint",
+      "prim_path": "/World/Robot/right_one_link/right_two_joint",
+      "prim_type": "PhysicsRevoluteJoint",
+      "body0": "/World/Robot/right_one_link",
+      "body1": "/World/Robot/right_two_link",
+      "body0_name": "right_one_link",
+      "body1_name": "right_two_link",
+      "axis": "Z",
+      "local_pos0": [
+        0.0,
+        0.04309999942779541,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "lower_limit": -105.42423248291016,
+      "upper_limit": 0.0
+    }
+  ],
+  "fixed_joints": [
+    {
+      "prim_path": "/World/Robot/pelvis/pelvis_contour_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/pelvis",
+      "body1": "/World/Robot/pelvis_contour_link",
+      "body0_name": "pelvis",
+      "body1_name": "pelvis_contour_link",
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prim_path": "/World/Robot/torso_link/head_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/torso_link",
+      "body1": "/World/Robot/head_link",
+      "body0_name": "torso_link",
+      "body1_name": "head_link",
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prim_path": "/World/Robot/torso_link/imu_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/torso_link",
+      "body1": "/World/Robot/imu_link",
+      "body0_name": "torso_link",
+      "body1_name": "imu_link",
+      "local_pos0": [
+        -0.04233868420124054,
+        0.0016599999507889152,
+        0.15206700563430786
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prim_path": "/World/Robot/torso_link/logo_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/torso_link",
+      "body1": "/World/Robot/logo_link",
+      "body0_name": "torso_link",
+      "body1_name": "logo_link",
+      "local_pos0": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prim_path": "/World/Robot/left_elbow_roll_link/left_palm_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/left_elbow_roll_link",
+      "body1": "/World/Robot/left_palm_link",
+      "body0_name": "left_elbow_roll_link",
+      "body1_name": "left_palm_link",
+      "local_pos0": [
+        0.11999999731779099,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304,
+        0.0
+      ]
+    },
+    {
+      "prim_path": "/World/Robot/right_elbow_roll_link/right_palm_joint",
+      "prim_type": "PhysicsFixedJoint",
+      "body0": "/World/Robot/right_elbow_roll_link",
+      "body1": "/World/Robot/right_palm_link",
+      "body0_name": "right_elbow_roll_link",
+      "body1_name": "right_palm_link",
+      "local_pos0": [
+        0.11999999731779099,
+        0.0,
+        0.0
+      ],
+      "local_rot0": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304,
+        0.0
+      ],
+      "local_pos1": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "local_rot1": [
+        0.7071067690849304,
+        0.0,
+        0.7071067690849304,
+        0.0
+      ]
+    }
+  ],
+  "limit_units": "degrees"
+}
